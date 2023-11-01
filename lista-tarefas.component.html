@@ -1,0 +1,9 @@
+<h1>Exemplo Formulário - Template Driven</h1>
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <ul>
+    <li *ngFor="let tarefas of tarefas" [ngStyle]="{'text-decoration': tarefas.concluido ? 'line-through' : 'none'}">
+      {{ tarefas.descricao }}
+      <button (click)="toggleConcluido(tarefas)">Concluir</button>
+    </li>
+  </ul>
+</form>
